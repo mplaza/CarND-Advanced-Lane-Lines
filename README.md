@@ -1,2 +1,4 @@
 ## Advanced Lane Finding
 [![Udacity - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)
+
+Used distortion correction, applied gradient and color transformation and thresholding to generate a binary image, used perspective transformation to generate a 'birds-eye view' image, found lane line pixels with a sliding window approach with convolution, generate a polynomial to represent the lane lines. Calculated the curve radius and distance of car from center and overlayed the lane line polynomials. Then applied this method to process frames of video to identify the lanes while car was driving.

@@ -80,7 +80,7 @@ Then I collected the x values for centoids representing the left and right lanes
 
 ####5. Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.
 
-In image_generation.py lines 125-126 I defined the meter to pixel ratio from looking at the images based on lane width 3.7m and dashed line length 3m.
+In image_generation.py lines 125-126 I defined the meter to pixel ratio from looking at the images based on lane width 3.7m and lane length of 30m.
 
 I calculated where the vehicle was with respect to the center in 201-210 by calculating where the center of the image is vs the line center and then scaling it by the pixel ratio.
 

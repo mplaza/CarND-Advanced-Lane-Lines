@@ -124,8 +124,8 @@ def process_image(img):
 	window_width = 30
 	window_height = 80
 	margin = 25
-	# approximate pixel to real world conversions based on lane width 3.7m and dashed line length 3m
-	ym = 20/720
+	# approximate pixel to real world conversions based on lane width 3.7m and lane length of 30m
+	ym = 30/720
 	xm = 3.7/700
 	smooth_factor = 15
 
