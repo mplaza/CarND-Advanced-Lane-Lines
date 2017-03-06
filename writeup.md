@@ -51,13 +51,13 @@ Then I used the cv2.calibrateCamera function to computer the calibration and dis
 
 In image_generation.py, I processed the images. I used cv2.undistort (line 82) using the coefficients that I calculated from the camera calibration. 
 
-![undistorted image][./test_images/undistorted1.jpg]
+![undistorted image](./test_images/undistorted1.jpg)
 
 ####2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
 
 I experimented with different color and gradient thresholds to create a binary image. Lines 26-75 define different thresholds and they are combined and applied to the image in lines 87-92 (image_generation.py).
 
-![binary image][./test_images/binary1.jpg]
+![binary image](./test_images/binary1.jpg)
 
 ####3. Describe how (and identify where in your code) you performed a perspective transform and provide an example of a transformed image.
 
@@ -66,17 +66,17 @@ I looked at the images to define a trapezoid that represented the lane lines and
 
 I verified that my perspective transform was working as expected by drawing the `src` and `dst` points onto a test image and its warped counterpart to verify that the lines appear parallel in the warped image.
 
-![alt text][./test_images/transformed1.jpg]
+![alt text](./test_images/transformed2.jpg)
 
 ####4. Describe how (and identify where in your code) you identified lane-line pixels and fit their positions with a polynomial?
 
 I identified lane-line pixels by apply sliding window approach with a convolution in line_tracker.py to find the window centroids.
 
-![curved lines][./test_images/curved_lines2.jpg]
+![curved lines](./test_images/curved_lines2.jpg)
 
 Then I collected the x values for centoids representing the left and right lanes and fit them to a polynomial in lines 168-176 (image_generation.py) using np.polyfit.
 
-![polynomial lines][./test_images/lane_poly1.jpg]
+![polynomial lines](./test_images/lane_poly1.jpg)
 
 ####5. Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.
 
@@ -88,7 +88,7 @@ I calculated the radius of lane curvature lines 212-219 by creating a scaled pol
 
 I appended these to the image using cv2.putText.
 
-![polynomial lines][./test_images/lane_poly_img3.jpg]
+![polynomial lines](./test_images/lane_poly_img3.jpg)
 
 ####6. Provide an example image of your result plotted back down onto the road such that the lane area is identified clearly.
 
@@ -96,9 +96,7 @@ I added the lane lines identified to the image in lines 182-197 (image_generatio
 
 I generated a list of points for the polynomial (198-184) and used cv2.fillPoly to draw them. I unwarped the found lanes (194-195) and added them on top of the image (197).
 
-
-![alt text][image6]
-
+![polynomial lines](./test_images/lane_poly_img2.jpg)
 ---
 
 ###Pipeline (video)
