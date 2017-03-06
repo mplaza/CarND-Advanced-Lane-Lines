@@ -66,13 +66,13 @@ I looked at the images to define a trapezoid that represented the lane lines and
 
 I verified that my perspective transform was working as expected by drawing the `src` and `dst` points onto a test image and its warped counterpart to verify that the lines appear parallel in the warped image.
 
-![alt text](./test_images/transformed2.jpg)
+![alt text](./test_images/transformed4.jpg)
 
 ####4. Describe how (and identify where in your code) you identified lane-line pixels and fit their positions with a polynomial?
 
 I identified lane-line pixels by apply sliding window approach with a convolution in line_tracker.py to find the window centroids.
 
-![curved lines](./test_images/curved_lines2.jpg)
+![curved lines](./test_images/curve_lines2.jpg)
 
 Then I collected the x values for centoids representing the left and right lanes and fit them to a polynomial in lines 168-176 (image_generation.py) using np.polyfit.
 
