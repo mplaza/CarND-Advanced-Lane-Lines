@@ -50,8 +50,9 @@ Then I used the cv2.calibrateCamera function to computer the calibration and dis
 ####1. Provide an example of a distortion-corrected image.
 
 In image_generation.py (lines 74-77), I undistorted a calibration image using cv2.undistort to verify that calibration was done correctly. Below are the original and distortion corrected images.
-
+calibration image:
 ![calibration image](./camera_cal/calibration1.jpg)
+distortion corrected image:
 ![distortion corrected image](./test_images/undistorted_calibration1.jpg)
 
 In image_generation.py, I processed the images. I used cv2.undistort (line 82) using the coefficients that I calculated from the camera calibration. 
