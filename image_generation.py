@@ -64,17 +64,17 @@ def threshold_color(img):
 	r_binary = np.zeros_like(r_channel)
 	r_binary[( (r_channel > r_thresh[0]) & (r_channel <= r_thresh[1]) )] = 1
 
-	# hsv = cv2.cvtColor(img, cv2.COLOR_RGB2HSV)
-	# v_channel = hsv[:,:,2]
-	# v_binary
-
 	# combine color thresholds
 	output = np.zeros_like(r_channel)
 	output[(s_binary == 1) & (r_binary == 1)] = 1
 	return output
-
 # load test images
 images = glob.glob('./test_images/test*.jpg')
+# print out undistorted calibration image to show calibration done correctly
+calibration_img_example = cv2.imread('./camera_cal/calibration1.jpg')
+undistort_calibration_img = cv2.undistort(calibration_img_example, mtx, dist, None, mtx)
+undistorted_img_name = './test_images/undistorted_calibration1.jpg'
+cv2.imwrite(undistorted_img_name, undistort_calibration_img)
 
 for indx, img in enumerate(images):
 	img = cv2.imread(img)
